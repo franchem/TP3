@@ -39,19 +39,21 @@ Lancer du dé : {lancer}""")
             print("Dernier combat: Defaite")
             vies -= force
             defaites += 1
+            consecutives = 0
 
         print()
 
     elif choice == "2":
-        print("Vous perdez un point de vie a cause de vos pantalons souilles")
         vies -= 1
-    elif choice == "3":
-        print(f"""Pour réussir un combat, il faut que la valeur du dé lancé soit supérieure à la force de l’adversaire.  Dans ce cas, le niveau de vie de l’usager est augmenté de la force de l’adversaire.
-Une défaite a lieu lorsque la valeur du dé lancé par l’usager est inférieure ou égale à la force de l’adversaire.  Dans ce cas, le niveau de vie de l’usager est diminué de la force de l’adversaire.
+        print(f"Vous perdez un point de vie en trebuchant. Vous etes maintenant a {vies} vies.")
 
+    elif choice == "3":
+        print("""Pour réussir un combat, il faut que la valeur du dé lancé soit supérieure à la force de l’adversaire.
+Dans ce cas, le niveau de vie de l’usager est augmenté de la force de l’adversaire.
+Une défaite a lieu lorsque la valeur du dé lancé par l’usager est inférieure ou égale à la force de l’adversaire.
+Dans ce cas, le niveau de vie de l’usager est diminué de la force de l’adversaire.
 
 La partie se termine lorsque les points de vie de l’usager tombent sous 0.
-
 
 L’usager peut combattre ou éviter chaque adversaire, dans le cas de l’évitement, il y a une pénalité de 1 point de vie.
 """)
