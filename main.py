@@ -1,3 +1,10 @@
+"""
+Par Mika Franche
+2025/09/11
+Dungeon Crawler vraiment nul
+"""
+
+
 import random as rd
 vies = 20
 victoires, defaites = 0, 0
