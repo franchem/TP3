@@ -3,8 +3,7 @@ Par Mika Franche
 2025/09/11
 Dungeon Crawler vraiment nul
 """
-
-
+import random
 import random as rd
 vies = 20
 victoires, defaites = 0, 0
@@ -14,7 +13,9 @@ consecutives = 0
 
 while vies > 0:
     count += 1
-    force = rd.randint(1, 5)
+    force = rd.randint(1, 10)
+    if count == 3:
+        force = random.randint(8, 10)
     print(f"""Vous tombez face à face avec un adversaire de difficulté : {force}
 Que voulez-vous faire ?
 1- Combattre cet adversaire
@@ -29,14 +30,14 @@ Que voulez-vous faire ?
             idiot = False
     if choice == "1":
         combats += 1
-        lancer = rd.randint(1, 6)
+        lancers = [rd.randint(1, 6), rd.randint(1, 6)]
         print(f"""Adversaire : {count}
 Force de l’adversaire : {force}
 Niveau de vie de l’usager : {vies}
 Combat {combats} : {victoires} vs {defaites}
-Lancer du dé : {lancer}""")
+Lancer des dé : {lancers[0]}+{lancers[1]}""")
 
-        if lancer > force:
+        if lancers[0]+lancers[1] > force:
             print("Dernier combat: Victoire")
             vies += force
             victoires += 1
